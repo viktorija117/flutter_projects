@@ -1,37 +1,19 @@
 import 'package:flutter/material.dart';
+import 'gradient_container.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter First App',
-      theme: ThemeData(useMaterial3: true),
+  runApp(
+    MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Welcome to Flutter')),
-        body: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Text(
-                'Hello World!',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 16),
-              Text('Uvod u Flutter', textAlign: TextAlign.center),
-            ],
-          ),
+        backgroundColor: const Color.fromARGB(255, 148, 115, 205),
+        body: GradientContainer(
+          colors: [
+            const Color.fromARGB(255, 21, 10, 40),
+            const Color.fromARGB(255, 82, 59, 143),
+            const Color.fromARGB(255, 184, 152, 239),
+          ],
         ),
       ),
-    );
-  }
+    ),
+  ); // Obavezno
 }
